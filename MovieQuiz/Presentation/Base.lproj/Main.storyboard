@@ -114,9 +114,13 @@
                                     <constraint firstAttribute="trailing" secondItem="rLr-Pw-3za" secondAttribute="trailing" id="d3a-ra-89T"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="zSa-Vw-viP">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="YP Background"/>
+                        <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eUf-57-EYb" secondAttribute="bottom" id="RMv-3q-wZO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUf-57-EYb" secondAttribute="trailing" constant="20" id="ZmH-5X-95u"/>
@@ -125,6 +129,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zSa-Vw-viP" id="b8V-Hr-bTE"/>
                         <outlet property="counterLabel" destination="wRI-we-n8F" id="a2A-F7-iy6"/>
                         <outlet property="imageView" destination="DOk-Bx-6S4" id="8Ts-pT-4D9"/>
                         <outlet property="noButton" destination="W7c-lc-B0d" id="HVZ-Uk-EfX"/>
@@ -134,13 +139,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.072463768115945" y="55.434782608695656"/>
+            <point key="canvasLocation" x="-55.072463768115945" y="54.910714285714285"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="YP Background">
-            <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="YP Black">
             <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
