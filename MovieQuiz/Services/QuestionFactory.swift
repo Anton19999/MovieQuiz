@@ -2,7 +2,7 @@ import Foundation
 class QuestionFactory: QuestionFactoryProtocol {
     
     private let moviesLoader: MoviesLoading
-    private weak var delegate: QuestionFactoryDelegate?
+    weak var delegate: QuestionFactoryDelegate?
     private var movies: [MostPopularMovie] = []
     
     init(moviesLoader: MoviesLoading, delegate: QuestionFactoryDelegate?) {
@@ -10,7 +10,6 @@ class QuestionFactory: QuestionFactoryProtocol {
         self.delegate = delegate
     }
     func loadData() {
-        print("Delegate is \(String(describing: delegate))")
         
         moviesLoader.loadMovies { [weak self] result in
             DispatchQueue.main.async {
