@@ -49,6 +49,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="DOk-Bx-6S4" userLabel="Preview Image">
                                         <rect key="frame" x="22.5" y="43.5" width="329" height="493.5"/>
                                         <color key="backgroundColor" name="YP White"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Poster"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DOk-Bx-6S4" secondAttribute="height" multiplier="2:3" id="cRB-qc-veg"/>
                                         </constraints>

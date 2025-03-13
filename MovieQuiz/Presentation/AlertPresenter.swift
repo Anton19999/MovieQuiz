@@ -1,31 +1,24 @@
 import UIKit
 
-class AlertPresenter: UIViewController {
-    func showError(quiz result: AlertModel, from viewController: UIViewController, restartAction: @escaping () -> Void) {
-        let alert = UIAlertController(
-            title: result.title,
-            message: result.message,
-            preferredStyle: .alert)
-        let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
-            restartAction()
-        }
-        alert.addAction(action)
-        DispatchQueue.main.async {
-            viewController.present(alert, animated: true, completion: nil)
-        }
+final class AlertPresenter {
+    weak var controller: UIViewController?
+    
+    init(controller: UIViewController?) {
+        self.controller = controller
     }
-    func show(quiz result: QuizResultsViewModel, from viewController: UIViewController, restartAction: @escaping () -> Void) {
-        let alert = UIAlertController(
-            title: result.title,
-            message: result.text,
-            preferredStyle: .alert)
-        let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
-            restartAction()
+    
+    func showAlert(with model: AlertModel) {
+        guard let controller else { return }
+        let alertController = UIAlertController(title: model.title,
+                                                message: model.message,
+                                                preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: model.buttonText, style: .default) { _ in
+            model.completion()
         }
-        alert.addAction(action)
-        DispatchQueue.main.async {
-            viewController.present(alert, animated: true, completion: nil)
-        }
+        
+        alertController.addAction(alertAction)
+        controller.present(alertController, animated: true)
     }
 }
+
 
